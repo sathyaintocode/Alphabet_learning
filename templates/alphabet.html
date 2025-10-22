@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ letter }}</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        img {
+            width: 300px;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        .back-link {
+            margin-top: 30px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ letter }} for {{ data.word }}</h1>
+    <img src="{{ image_url }}" alt="{{ data.word }}">
+    <a href="{{ url_for('index') }}" class="back-link">Back to Alphabets</a>
+</body>
+</html>
