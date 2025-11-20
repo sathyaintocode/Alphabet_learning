@@ -1,0 +1,18 @@
+{
+    "xsappname": "alphabet-flask-security",
+    "tenant-mode": "shared",
+    "scopes": [
+      {
+        "name": "uaa.user",
+        "description": "Default scope"
+      }
+    ],
+    "role-templates": [
+      {
+        "name": "AlphabetViewer",
+        "description": "Can view alphabet pages",
+        "scope-references": ["uaa.user"]
+      }
+    ]
+  }
+  

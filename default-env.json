@@ -1,0 +1,15 @@
+{
+    "VCAP_SERVICES": {
+      "xsuaa": [
+        {
+          "credentials": {
+            "clientid": "sb-alphabet-flask-security!t205749",
+            "clientsecret": "5365af44-37fc-4711-b7c7-14f3e079b6e6$jYHm4Z-FpVpZqA1wnVj8Bz6g83mDvHCofLtNvLGLBYA=",
+            "url": "https://digital-assistant-experiment-djeq6drz.authentication.eu12.hana.ondemand.com",
+            "xsappname": "alphabet-flask-security!t205749"
+          }
+        }
+      ]
+    }
+  }
+  

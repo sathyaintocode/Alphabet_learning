@@ -1,7 +1,38 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, request, render_template, url_for
+import jwt
+import os 
 
 app = Flask(__name__)
 
+# -------------------------------
+# XSUAA Token Validation
+# -------------------------------
+def get_logged_in_user():
+    auth_header = request.headers.get("Authorization")
+    if not auth_header:
+        return None
+
+    token = auth_header.replace("Bearer ", "")
+
+    try:
+        decoded = jwt.decode(token, options={"verify_signature": False})
+        return decoded.get("email")
+    except:
+        return None
+
+
+def login_required(f):
+    def wrapper(*args, **kwargs):
+        user = get_logged_in_user()
+        if not user:
+            return "Unauthorized", 401
+        return f(*args, **kwargs)
+    wrapper.__name__ = f.__name__
+    return wrapper
+
+# -------------------------------
+# Alphabet Data
+# -------------------------------
 alphabet_data = {
     'A': {'word': 'Apple', 'image': 'A.png'},
     'B': {'word': 'Ball', 'image': 'B.png'},
@@ -31,18 +62,24 @@ alphabet_data = {
     'Z': {'word': 'Zebra', 'image': 'Z.png'}
 }
 
+# -------------------------------
+# Protected Routes
+# -------------------------------
 @app.route('/')
+@login_required
 def index():
     return render_template('index.html', alphabets=list(alphabet_data.keys()))
 
 @app.route('/alphabet/<letter>')
+@login_required
 def show_alphabet(letter):
-    data = alphabet_data.get(letter.upper())
-    if not data:
-        data = {'word': 'Not Found', 'image': 'notfound.png'}
-    # Use url_for to point to the static folder
+    data = alphabet_data.get(letter.upper(), {'word': 'Not Found', 'image': 'notfound.png'})
     image_url = url_for('static', filename=f'images/{data["image"]}')
     return render_template('alphabet.html', letter=letter.upper(), data=data, image_url=image_url)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# -------------------------------
+# Run (local only)
+# -------------------------------
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)

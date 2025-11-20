@@ -1,0 +1,30 @@
+applications:
+
+  - name: alphabet-approuter
+    path: approuter
+    buildpacks:
+      - nodejs_buildpack
+    memory: 128M
+    random-route: true
+    services:
+      - alphabet-xsuaa
+    env:
+      TENANT_HOST_PATTERN: "^(.*)-alphabet-approuter.(.*).cfapps.(.*).hana.ondemand.com$"
+      destinations: |
+        [
+          {
+            "name": "flask-backend",
+            "url": "https://alphabet-flask-app.${default-domain}",
+            "forwardAuthToken": true
+          }
+        ]
+
+  - name: alphabet-flask-app
+    path: .
+    command: python app.py
+    buildpacks:
+      - python_buildpack
+    memory: 256M
+    services:
+      - alphabet-xsuaa
+    random-route: true
