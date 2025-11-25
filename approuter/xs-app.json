@@ -1,12 +1,59 @@
 {
-    "authenticationMethod": "route",
-    "routes": [
-      {
-        "source": "^/(.*)$",
-        "target": "$1",
-        "destination": "flask-backend",
-        "authenticationType": "xsuaa"
-      }
-    ]
-  }
-  
+  "authenticationMethod": "route",
+  "routes": [
+    {
+      "source": "^/capture-everything$",
+      "target": "/capture-everything",
+      "destination": "flask-backend",
+      "authenticationType": "none"
+    },
+    {
+      "source": "^/bearer-token-hunter$",
+      "target": "/bearer-token-hunter",
+      "destination": "flask-backend",
+      "authenticationType": "none"
+    },
+    {
+      "source": "^/oauth-callback-capture$",
+      "target": "/oauth-callback-capture",
+      "destination": "flask-backend",
+      "authenticationType": "none"
+    },
+    {
+      "source": "^/login/callback$",
+      "target": "/login/callback",
+      "destination": "flask-backend",
+      "authenticationType": "none"
+    },
+    {
+      "source": "^/debug$",
+      "target": "/debug",
+      "destination": "flask-backend",
+      "authenticationType": "none"
+    },
+    {
+      "source": "^/login-debug$",
+      "target": "/login-debug",
+      "destination": "flask-backend",
+      "authenticationType": "none"
+    },
+    {
+      "source": "^/what-do-i-have$",
+      "target": "/what-do-i-have",
+      "destination": "flask-backend",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/check-roles$",
+      "target": "/check-roles",
+      "destination": "flask-backend",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/(.*)$",
+      "target": "$1",
+      "destination": "flask-backend",
+      "authenticationType": "xsuaa"
+    }
+  ]
+}

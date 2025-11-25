@@ -4,15 +4,19 @@
     "scopes": [
       {
         "name": "uaa.user",
-        "description": "Default scope"
+        "description": "User access"
       }
     ],
     "role-templates": [
       {
-        "name": "AlphabetViewer",
-        "description": "Can view alphabet pages",
+        "name": "User",
+        "description": "User role",
         "scope-references": ["uaa.user"]
       }
-    ]
+    ],
+    "oauth2-configuration": {
+      "redirect-uris": [
+        "https://alphabet-approuter-empathic-oribi-hz.cfapps.eu12.hana.ondemand.com/login/callback"
+      ]
+    }
   }
-  

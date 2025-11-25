@@ -1,11 +1,10 @@
 {
-    "name": "alphabet-approuter",
-    "version": "1.0.0",
-    "dependencies": {
-      "@sap/approuter": "^14"
-    },
-    "scripts": {
-      "start": "node node_modules/@sap/approuter/approuter.js"
-    }
+  "name": "alphabet-approuter",
+  "version": "1.0.0",
+  "dependencies": {
+    "@sap/approuter": "^14.4.2"
+  },
+  "scripts": {
+    "start": "node node_modules/@sap/approuter/approuter.js"
   }
-  
+}

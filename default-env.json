@@ -3,10 +3,22 @@
       "xsuaa": [
         {
           "credentials": {
+            "apiurl": "https://api.authentication.eu12.hana.ondemand.com",
             "clientid": "sb-alphabet-flask-security!t205749",
-            "clientsecret": "5365af44-37fc-4711-b7c7-14f3e079b6e6$jYHm4Z-FpVpZqA1wnVj8Bz6g83mDvHCofLtNvLGLBYA=",
+            "clientsecret": "ec4aa378-53ae-47b3-a0e1-c875abdedde5$xiFV_A2Sdum4BVZdQkgawel1I_bHOYEeb15HFaElCCs=",
+            "credential-type": "binding-secret",
+            "identityzone": "digital-assistant-experiment-djeq6drz",
+            "identityzoneid": "821f1dcc-b601-4480-8ab7-cc2959431572",
+            "sburl": "https://internal-xsuaa.authentication.eu12.hana.ondemand.com",
+            "serviceInstanceId": "b46f7ee1-c244-4f0d-bc09-0e190c30b836",
+            "subaccountid": "821f1dcc-b601-4480-8ab7-cc2959431572",
+            "tenantid": "821f1dcc-b601-4480-8ab7-cc2959431572",
+            "tenantmode": "shared",
+            "uaadomain": "authentication.eu12.hana.ondemand.com",
             "url": "https://digital-assistant-experiment-djeq6drz.authentication.eu12.hana.ondemand.com",
-            "xsappname": "alphabet-flask-security!t205749"
+            "verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmHHmYLvITDvXvfDgVf00\nfOlSwryOO5oOHDj0l4IcSfrjwh8xsiLYrGPMcLZUQ2zwRYmhJW6+5+XuZGI7KXU2\npLEWpdvSnjpcQge9KzUZvq1JkMx5mq/zwKVh4yDBEbpD2RCzHURVwk8933EyeSMs\ne8Z434+LkbMfDfNqIcwOGlRtSAdVdyT/v7WiAePQH5nXLMKfmU0yb1myL38dAU4x\n9P43RPAvQw/ZZyKK3EWk7/0puRD883D22Mk8CJK/JTI8OWi/SAQYYQZPKF8CPv4L\nRG4DrikZc776lqsAPM24Fpkp3pI5jmMau9qnKqUpituZCeX20c51Y0Y481Fupldb\nlQIDAQAB\n-----END PUBLIC KEY-----",
+            "xsappname": "alphabet-flask-security!t205749",
+            "zoneid": "821f1dcc-b601-4480-8ab7-cc2959431572"
           }
         }
       ]
