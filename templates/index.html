@@ -1,32 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>LEARN ALPHABETS</title>
-    <style>
-        body {
-            text-align: center;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-        }
-        .alphabet {
-            font-size: 60px;
-            margin: 20px;
-        }
-        a {
-            text-decoration: none;
-            color: #007bff;
-        }
-        a:hover {
-            color: #ff6347;
-        }
-    </style>
-</head>
-<body>
-    <h1>LEARN ALPHABETS</h1>
-    <div>
-        {% for letter in alphabets %}
-            <span class="alphabet"><a href="{{ url_for('show_alphabet', letter=letter) }}">{{ letter }}</a></span>
-        {% endfor %}
-    </div>
-</body>
-</html>
+<!-- Add this near the top of your template -->
+{% if user %}
+<div class="user-info">
+    <p>Welcome, {{ user }}! <a href="/admin">Admin Panel</a></p>
+</div>
+{% else %}
+<div class="user-info">
+    <p>Browsing as guest. <a href="/validate">Login for more features</a></p>
+</div>
+{% endif %}

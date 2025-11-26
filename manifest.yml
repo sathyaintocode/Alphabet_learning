@@ -14,7 +14,7 @@ applications:
         [
           {
             "name": "flask-backend",
-            "url": "https://alphabet-flask-app.${default-domain}",
+            "url": "https://alphabet-flask-app-empathic-gazelle-jk.cfapps.eu12.hana.ondemand.com",
             "forwardAuthToken": true
           }
         ]

@@ -1,15 +1,2 @@
-{
-    "VCAP_SERVICES": {
-      "xsuaa": [
-        {
-          "credentials": {
-            "clientid": "client_id",
-            "clientsecret": "client_secret",
-            "url": "https://digital-assistant-experiment-djeq6drz.authentication.eu12.hana.ondemand.com",
-            "xsappname": "app_name"
-          }
-        }
-      ]
-    }
-  }
+
   
