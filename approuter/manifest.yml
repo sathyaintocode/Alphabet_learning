@@ -1,0 +1,17 @@
+applications:
+  - name: alphabet-approuter
+    path: .
+    memory: 128M
+    buildpacks:
+      - nodejs_buildpack
+    services:
+      - alphabet-xsuaa
+    env:
+      destinations: |
+        [
+          {
+            "name": "flask-backend",
+            "url": "https://alphabet-flask-app-empathic-gazelle-jk.cfapps.eu12.hana.ondemand.com",
+            "forwardAuthToken": true
+          }
+        ]

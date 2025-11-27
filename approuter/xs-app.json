@@ -2,33 +2,21 @@
   "authenticationMethod": "route",
   "routes": [
     {
-      "source": "^/debug-step1$",
-      "target": "/debug-step1",
-      "destination": "flask-backend",
-      "authenticationType": "none"
-    },
-    {
-      "source": "^/debug-step3$",
-      "target": "/debug-step3",
-      "destination": "flask-backend",
-      "authenticationType": "none"
-    },
-    {
-      "source": "^/debug-step4$",
-      "target": "/debug-step4",
-      "destination": "flask-backend",
-      "authenticationType": "none"
-    },
-    {
-      "source": "^/debug-step2$",
-      "target": "/debug-step2",
+      "source": "^/$",
+      "target": "/",
       "destination": "flask-backend",
       "authenticationType": "xsuaa"
     },
     {
-      "source": "^/(.*)$",
-      "target": "$1",
+      "source": "^/debug-(.*)$",
+      "target": "/debug-$1", 
       "destination": "flask-backend",
+      "authenticationType": "none"
+    },
+    {
+      "source": "^/(.*)$",
+      "target": "/$1",
+      "destination": "flask-backend", 
       "authenticationType": "xsuaa"
     }
   ]

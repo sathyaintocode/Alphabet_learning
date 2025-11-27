@@ -1,18 +1,22 @@
 {
-    "xsappname": "alphabet-flask-security",
-    "tenant-mode": "shared",
-    "scopes": [
-      {
-        "name": "uaa.user",
-        "description": "Default scope"
-      }
-    ],
-    "role-templates": [
-      {
-        "name": "AlphabetViewer",
-        "description": "Can view alphabet pages",
-        "scope-references": ["uaa.user"]
-      }
+  "xsappname": "alphabet-flask-security",
+  "tenant-mode": "shared",
+  "scopes": [
+    {
+      "name": "uaa.user",
+      "description": "UAA"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "Token_Exchange",
+      "description": "UAA",
+      "scope-references": ["uaa.user"]
+    }
+  ],
+  "oauth2-configuration": {
+    "redirect-uris": [
+      "https://alphabet-approuter-empathic-oribi-hz.cfapps.eu12.hana.ondemand.com/login/callback"
     ]
   }
-  
+}
